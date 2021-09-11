@@ -17,3 +17,4 @@ variable "keptn_token" {
 
 variable "cluster_name" {}
 variable "gke_region" {}
+variable "gke_project" {}
