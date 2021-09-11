@@ -3,6 +3,7 @@ data "google_client_config" "provider" {}
 data "google_container_cluster" "my_cluster" {
   name     = var.cluster_name
   location = var.gke_region
+  project = var.gke_project
 }
 
 provider "kubernetes" {
