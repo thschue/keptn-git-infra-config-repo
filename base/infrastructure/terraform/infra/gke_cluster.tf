@@ -43,14 +43,3 @@ resource "google_container_node_pool" "gke-nodes-containerd" {
   }
 }
 
-output "gke_endpoint" {
-  value = "https://${google_container_cluster.gke-cluster.endpoint}"
-}
-
-output "gke_token" {
-  value = data.google_client_config.provider.access_token
-}
-
-output "gke_ca_data" {
-  value = google_container_cluster.gke-cluster.master_auth[0].cluster_ca_certificate
-}
