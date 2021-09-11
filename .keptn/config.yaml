@@ -1,3 +1,6 @@
+metadata:
+  initbranch: dev
+  
 services:
 - name: infrastructure
   triggerevent: sh.keptn.event.dev.artifact-delivery.triggered
