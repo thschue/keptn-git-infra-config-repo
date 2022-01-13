@@ -6,8 +6,9 @@ actions:
     tasks:
       - name: "crossplane"
         files:
-          - crossplane
+          - /crossplane
         image: "ghcr.io/thschue/kubectl:latest"
+        imagePullPolicy: "Always"
         cmd:
           - /kubectl
         args:
