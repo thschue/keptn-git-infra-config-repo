@@ -1,3 +1,0 @@
-services:
-- name: platform
-  triggerevent: sh.keptn.event.dev.artifact-delivery.triggered
