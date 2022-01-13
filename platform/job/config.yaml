@@ -10,5 +10,5 @@ actions:
         image: "ghcr.io/thschue/kubectl:latest"
         imagePullPolicy: "Always"
         args:
-          - /kubectl
-          - version
+          - ls
+          - "/"
