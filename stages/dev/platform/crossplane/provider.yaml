@@ -5,3 +5,9 @@ metadata:
   namespace: keptn
 spec:
   projectID: sai-research
+  credentials:
+    source: Secret
+    secretRef:
+      namespace: keptn
+      name: gcp-account-creds
+      key: credentials
