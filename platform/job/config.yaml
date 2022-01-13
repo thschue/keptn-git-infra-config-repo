@@ -9,8 +9,6 @@ actions:
           - crossplane
         image: "ghcr.io/thschue/kubectl:latest"
         imagePullPolicy: "Always"
-        cmd:
-          - ash
         args:
           - /kubectl
           - version
