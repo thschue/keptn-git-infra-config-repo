@@ -11,4 +11,5 @@ actions:
         imagePullPolicy: "Always"
         args:
           - /kubectl
-          - version
+          - kustomize
+          - crossplane/.
