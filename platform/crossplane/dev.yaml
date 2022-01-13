@@ -2,5 +2,6 @@ apiVersion: gcp.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
   name: crossplane-provider-gcp
+  namespace: keptn
 spec:
   projectID: sai-research
