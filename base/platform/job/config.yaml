@@ -1,0 +1,16 @@
+apiVersion: v2
+actions:
+  - name: "infrastructure"
+    events:
+      - name: "sh.keptn.event.platform-setup.triggered"
+    tasks:
+      - name: "crossplane"
+        files:
+          - crossplane
+        image: "ghcr.io/thschue/kubectl:latest"
+        cmd:
+          - kubectl
+        args:
+          - kustomize
+          - crossplane/.
+          
