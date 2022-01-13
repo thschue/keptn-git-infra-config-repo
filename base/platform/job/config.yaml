@@ -9,8 +9,7 @@ actions:
           - crossplane
         image: "ghcr.io/thschue/kubectl:latest"
         cmd:
-          - kubectl
+          - /kubectl
         args:
           - kustomize
           - crossplane/.
-          
