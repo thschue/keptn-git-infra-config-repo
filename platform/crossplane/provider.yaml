@@ -4,10 +4,10 @@ metadata:
   name: crossplane-provider-gcp
   namespace: keptn
 spec:
-  projectID: ${GCP_PROJECT}
+  projectID: sai-research
   credentials:
     source: Secret
     secretRef:
-      namespace: ${PROVIDER_SECRET_NAMESPACE}
+      namespace: keptn
       name: gcp-account-creds
       key: credentials
