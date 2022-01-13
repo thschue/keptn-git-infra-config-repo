@@ -13,4 +13,4 @@ actions:
           - /kubectl
         args:
           - kustomize
-          - crossplane/.
+          - 'crossplane/.'
