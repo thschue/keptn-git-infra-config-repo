@@ -7,10 +7,10 @@ actions:
       - name: "crossplane"
         files:
           - crossplane
+          - scripts
         image: "ghcr.io/thschue/kubectl:latest"
         imagePullPolicy: "Always"
+        cmd:
+        - "ash"
         args:
-          - /kubectl
-          - apply
-          - '-k'
-          - '/keptn/crossplane/.'
+        - "/keptn/scripts/run_crossplane.sh"
