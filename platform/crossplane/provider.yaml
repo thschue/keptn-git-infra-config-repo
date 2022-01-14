@@ -2,12 +2,12 @@ apiVersion: gcp.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
   name: crossplane-provider-gcp
-  namespace: keptn
+  namespace: crossplane-system
 spec:
-  projectID: sai-research
+  projectID: ${GCP_PROJECT}
   credentials:
     source: Secret
     secretRef:
-      namespace: keptn
+      namespace: ${PROVIDER_SECRET_NAMESPACE}
       name: gcp-account-creds
       key: credentials
