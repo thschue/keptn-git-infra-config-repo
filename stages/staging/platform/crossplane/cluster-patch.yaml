@@ -9,7 +9,7 @@ spec:
   providerConfigRef:
     name: "staging-crossplane-provider-gcp"
   forProvider:
-    initialClusterVersion: "1.19"
+    initialClusterVersion: "1.20"
 
 
 ---
