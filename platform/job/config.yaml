@@ -14,3 +14,13 @@ actions:
           - apply
           - '-k'
           - '/keptn/crossplane/.'
+          - '&&'
+          - /kubectl
+          - wait
+          - '--for=condition=synced'
+          - cluster/$(STAGE)-cluster
+          - '--timeout=600s'
+        env:
+          - name: STAGE
+            value: "$.data.stage"
+            valueFrom: event
