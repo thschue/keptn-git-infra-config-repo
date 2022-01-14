@@ -17,7 +17,7 @@ spec:
 apiVersion: container.gcp.crossplane.io/v1beta1
 kind: GKECluster
 metadata:
-  name: gke-crossplane-cluster
+  name: cluster
   namespace: crossplane-system
 spec:
   forProvider:
@@ -62,7 +62,7 @@ spec:
 apiVersion: container.gcp.crossplane.io/v1alpha1
 kind: NodePool
 metadata:
-  name: gke-crossplane-np
+  name: nodepool
   namespace: crossplane-system
 spec:
   forProvider:
