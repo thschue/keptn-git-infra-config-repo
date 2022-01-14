@@ -37,11 +37,6 @@ spec:
         disabled: true
       httpLoadBalancing:
         disabled: false
-      istioConfig:
-        disabled: true
-        auth: "AUTH_NONE"
-      kalmConfig:
-        enabled: false
       kubernetesDashboard:
         disabled: true
       networkPolicyConfig:
