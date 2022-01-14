@@ -14,7 +14,3 @@ actions:
         - "ash"
         args:
         - "/keptn/scripts/run_crossplane.sh"
-        env:
-          - name: STAGE
-            value: "$.data.stage"
-            valueFrom: event
