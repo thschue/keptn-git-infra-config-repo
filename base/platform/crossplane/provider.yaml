@@ -14,8 +14,8 @@ spec:
 
 ---
 # API Reference: https://doc.crds.dev/github.com/crossplane/provider-gcp/container.gcp.crossplane.io/GKECluster/v1beta1@v0.16.0
-apiVersion: container.gcp.crossplane.io/v1beta1
-kind: GKECluster
+apiVersion: container.gcp.crossplane.io/v1beta2
+kind: Cluster
 metadata:
   name: cluster
   namespace: crossplane-system
