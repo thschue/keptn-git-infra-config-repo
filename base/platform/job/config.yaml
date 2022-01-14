@@ -7,19 +7,13 @@ actions:
       - name: "crossplane"
         files:
           - crossplane
+          - scripts
         image: "ghcr.io/thschue/kubectl:latest"
         imagePullPolicy: "Always"
+        cmd:
+        - "ash"
         args:
-          - /kubectl
-          - apply
-          - '-k'
-          - '/keptn/crossplane/.'
-          - '&&'
-          - /kubectl
-          - wait
-          - '--for=condition=synced'
-          - cluster/$(STAGE)-cluster
-          - '--timeout=600s'
+        - "/keptn/scripts/run_crossplane.sh"
         env:
           - name: STAGE
             value: "$.data.stage"
