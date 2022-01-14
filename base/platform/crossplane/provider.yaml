@@ -27,8 +27,6 @@ spec:
     defaultMaxPodsConstraint:
       maxPodsPerNode: 110
     addonsConfig:
-      cloudRunConfig:
-        disabled: true
       dnsCacheConfig:
         enabled: false
       gcePersistentDiskCsiDriverConfig:
