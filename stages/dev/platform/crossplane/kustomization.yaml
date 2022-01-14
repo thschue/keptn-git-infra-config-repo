@@ -1,0 +1,6 @@
+namePrefix: "dev-"
+resources:
+  - provider.yaml
+patchesStrategicMerge:
+  - provider-patch.yaml
+  - cluster-patch.yaml

@@ -1,4 +1,0 @@
-resources:
-- provider.yaml
-patchesStrategicMerge:
-- provider-patch.yaml
