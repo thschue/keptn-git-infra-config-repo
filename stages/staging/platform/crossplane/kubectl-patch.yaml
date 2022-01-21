@@ -13,5 +13,6 @@ spec:
       subjects:
         - kind: ServiceAccount
           name: staging-keptn-job-executor-job-executor-service
+          namespace: keptn
   providerConfigRef:
     name: dev-kubernetes-provider
