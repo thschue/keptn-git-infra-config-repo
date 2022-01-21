@@ -111,7 +111,6 @@ spec:
     chart:
       name: keptn-job-executor
       url: "https://github.com/keptn-contrib/job-executor-service/releases/download/0.1.5/job-executor-service-0.1.5.tgz"
-    namespace: keptn
     wait: false
     valuesFrom:
     - secretKeyRef:
