@@ -2,18 +2,19 @@
 apiVersion: kubernetes.crossplane.io/v1alpha1
 kind: Object
 metadata:
+  name: job-executor-serviceaccount
+  namespace: crossplane-system
+spec:
+  providerConfigRef:
+    name: staging-kubernetes-provider
+
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
   name: job-executor-rolebinding
   namespace: crossplane-system
 spec:
-  forProvider:
-    manifest:
-      kind: ClusterRoleBinding
-      metadata:
-        name: job-executor-global
-      subjects:
-        - kind: ServiceAccount
-          name: staging-keptn-job-executor-job-executor-service
-          namespace: keptn
   providerConfigRef:
     name: staging-kubernetes-provider
 
