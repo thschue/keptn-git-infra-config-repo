@@ -5,6 +5,10 @@ metadata:
   name: keptn-job-executor
   namespace: crossplane-system
 spec:
+  forProvider:
+    values:
+      distributor.stageFilter: staging
+      distributor.projectFilter: podtatohead
   providerConfigRef:
     name: staging-helm-provider
 
@@ -15,6 +19,10 @@ metadata:
   name: keptn-helm-service
   namespace: crossplane-system
 spec:
+  forProvider:
+    values:
+      distributor.stageFilter: staging
+      distributor.projectFilter: podtatohead
   providerConfigRef:
     name: staging-helm-provider
 
