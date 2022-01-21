@@ -3,7 +3,7 @@ resources:
   - gke.yaml
   - helm.yaml
   - kubernetes.yaml
-  - provider.yaml
+  - providers.yaml
 
 patchesStrategicMerge:
   - provider-patch.yaml
