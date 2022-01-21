@@ -25,10 +25,5 @@ metadata:
   name: job-executor-clusterrole
   namespace: crossplane-system
 spec:
-  forProvider:
-    manifest:
-      kind: ClusterRole
-      metadata:
-        name: job-executor
   providerConfigRef:
     name: staging-kubernetes-provider
