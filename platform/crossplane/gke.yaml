@@ -171,3 +171,20 @@ spec:
           optional: false
   providerConfigRef:
     name: helm-provider
+
+---
+apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: argo-rollouts
+  namespace: crossplane-system
+spec:
+  forProvider:
+    chart:
+      name: argo-rollouts
+      repository: https://argoproj.github.io/argo-helm
+      version: 2.9.1
+    namespace: argo-rollouts
+    wait: true
+  providerConfigRef:
+    name: helm-provider
