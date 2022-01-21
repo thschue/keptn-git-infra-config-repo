@@ -15,4 +15,19 @@ spec:
           name: staging-keptn-job-executor-job-executor-service
           namespace: keptn
   providerConfigRef:
-    name: dev-kubernetes-provider
+    name: staging-kubernetes-provider
+
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
+  name: job-executor-clusterrole
+  namespace: crossplane-system
+spec:
+  forProvider:
+    manifest:
+      kind: ClusterRole
+      metadata:
+        name: job-executor
+  providerConfigRef:
+    name: staging-kubernetes-provider
