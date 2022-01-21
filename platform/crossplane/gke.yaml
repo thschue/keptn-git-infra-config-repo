@@ -25,6 +25,13 @@ spec:
       name: cluster-config
       namespace: crossplane-system
       key: kubeconfig
+  identity:
+    type: GoogleApplicationCredentials
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: gcp-creds
+      key: creds
 
 ---
 # API Reference: https://doc.crds.dev/github.com/crossplane/provider-gcp/container.gcp.crossplane.io/GKECluster/v1beta1@v0.16.0
@@ -36,7 +43,6 @@ metadata:
 spec:
   forProvider:
     initialClusterVersion: "1.20"
-    serviceAccount: sa-test
     ipAllocationPolicy:
       useIpAliases: true
     defaultMaxPodsConstraint:
