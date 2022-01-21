@@ -1,6 +1,10 @@
 namePrefix: "staging-"
 resources:
   - gke.yaml
+  - helm.yaml
+  - kubernetes.yaml
+  - providers.yaml
+  
 patchesStrategicMerge:
   - provider-patch.yaml
   - cluster-patch.yaml
