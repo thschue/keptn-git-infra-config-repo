@@ -35,6 +35,7 @@ metadata:
 spec:
   forProvider:
     initialClusterVersion: "1.19"
+    serviceAccount: crossplane-sa
     ipAllocationPolicy:
       useIpAliases: true
     defaultMaxPodsConstraint:
