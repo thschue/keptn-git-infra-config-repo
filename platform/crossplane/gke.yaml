@@ -13,6 +13,19 @@ spec:
       key: creds
 
 ---
+apiVersion: helm.crossplane.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: helm-provider
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      name: cluster-config
+      namespace: crossplane-system
+      key: kubeconfig
+
+---
 # API Reference: https://doc.crds.dev/github.com/crossplane/provider-gcp/container.gcp.crossplane.io/GKECluster/v1beta1@v0.16.0
 apiVersion: container.gcp.crossplane.io/v1beta2
 kind: Cluster
@@ -86,3 +99,25 @@ spec:
     management:
       autoRepair: true
       autoUpgrade: true
+
+---
+apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: keptn-job-executor
+spec:
+  # rollbackLimit: 3
+  forProvider:
+    chart:
+      name: keptn-job-executor
+      url: "https://github.com/keptn-contrib/job-executor-service/releases/download/0.1.5/job-executor-service-0.1.5.tgz"
+    namespace: keptn
+    wait: true
+    valuesFrom:
+    - secretKeyRef:
+        key: values.yaml
+        name: keptn-ep-connection-values
+        namespace: crossplane-system
+        optional: false
+  providerConfigRef:
+    name: helm-provider
