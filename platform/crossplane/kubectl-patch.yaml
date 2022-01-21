@@ -13,6 +13,7 @@ spec:
       subjects:
         - kind: ServiceAccount
           name: dev-keptn-job-executor-job-executor-service
+          namespace: keptn
   providerConfigRef:
     name: dev-kubernetes-provider
 
