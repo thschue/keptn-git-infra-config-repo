@@ -4,7 +4,7 @@ resources:
   - helm.yaml
   - kubernetes.yaml
   - providers.yaml
-  
+
 patchesStrategicMerge:
   - provider-patch.yaml
   - cluster-patch.yaml
