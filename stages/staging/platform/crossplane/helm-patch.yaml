@@ -16,6 +16,16 @@ spec:
 apiVersion: helm.crossplane.io/v1beta1
 kind: Release
 metadata:
+  name: argo-rollouts
+  namespace: crossplane-system
+spec:
+  providerConfigRef:
+    name: staging-helm-provider
+
+---
+apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
   name: keptn-helm-service
   namespace: crossplane-system
 spec:
