@@ -33,7 +33,7 @@ spec:
       kind: ClusterRole
       metadata:
         # "namespace" omitted since ClusterRoles are not namespaced
-        name: job-executor
+        name: job-executor-clusterrole
       rules:
         - apiGroups: [ "" ]
           resources: [ "rollouts" ]
