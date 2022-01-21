@@ -117,7 +117,7 @@ spec:
     chart:
       name: keptn-job-executor
       url: "https://github.com/keptn-contrib/job-executor-service/releases/download/0.1.5/job-executor-service-0.1.5.tgz"
-    namespace: test
+    namespace: keptn
     wait: true
     valuesFrom:
     - secretKeyRef:
@@ -125,5 +125,28 @@ spec:
         name: keptn-ep-connection-values
         namespace: crossplane-system
         optional: false
+  providerConfigRef:
+    name: helm-provider
+
+---
+apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: keptn-helm-service
+  namespace: crossplane-system
+spec:
+  # rollbackLimit: 3
+  forProvider:
+    chart:
+      name: keptn-helm-service
+      url: "https://github.com/keptn/keptn/releases/download/0.8.4/helm-service-0.8.4.tgz"
+    namespace: keptn
+    wait: true
+    valuesFrom:
+      - secretKeyRef:
+          key: values.yaml
+          name: keptn-ep-connection-values
+          namespace: crossplane-system
+          optional: false
   providerConfigRef:
     name: helm-provider
