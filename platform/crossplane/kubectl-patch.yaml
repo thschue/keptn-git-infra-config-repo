@@ -31,3 +31,38 @@ spec:
         name: job-executor
   providerConfigRef:
     name: dev-kubernetes-provider
+
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
+  name: job-executor-local-rolebinding
+  namespace: crossplane-system
+spec:
+  forProvider:
+    manifest:
+      kind: RoleBinding
+      metadata:
+        name: job-executor-global
+      subjects:
+        - kind: ServiceAccount
+          name: dev-keptn-job-executor-job-executor-service
+          namespace: keptn
+  providerConfigRef:
+    name: dev-kubernetes-provider
+
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
+  name: job-executor-role
+  namespace: crossplane-system
+spec:
+  forProvider:
+    manifest:
+      kind: Role
+      metadata:
+        name: job-executor-keptn
+        namespace: keptn
+  providerConfigRef:
+    name: dev-kubernetes-provider

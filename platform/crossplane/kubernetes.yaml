@@ -42,3 +42,50 @@ spec:
         apiGroup: rbac.authorization.k8s.io
   providerConfigRef:
     name: kubernetes-provider
+
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
+  name: job-executor-role
+  namespace: crossplane-system
+spec:
+  forProvider:
+    manifest:
+      apiVersion: rbac.authorization.k8s.io/v1
+      kind: Role
+      metadata:
+        name: job-executor-role
+        namespace: keptn
+      rules:
+        - apiGroups: [ "" ]
+          resources: [ "configmap" ]
+          verbs: [ "create", "update", "get" ]
+          resourceNames: ["infra-version"]
+  providerConfigRef:
+    name: kubernetes-provider
+
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
+  name: job-executor-rolebinding-keptn
+  namespace: crossplane-system
+spec:
+  forProvider:
+    manifest:
+      apiVersion: rbac.authorization.k8s.io/v1
+      kind: RoleBinding
+      metadata:
+        name: job-executor-local
+      subjects:
+        - kind: ServiceAccount
+          name: keptn-job-executor-job-executor-service
+          namespace: keptn
+      roleRef:
+        kind: Role
+        name: job-executor-role
+        apiGroup: rbac.authorization.k8s.io
+        namespace: keptn
+  providerConfigRef:
+    name: kubernetes-provider
