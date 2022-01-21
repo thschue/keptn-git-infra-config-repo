@@ -10,6 +10,9 @@ spec:
     name: "staging-crossplane-provider-gcp"
   forProvider:
     initialClusterVersion: "1.20"
+  writeConnectionSecretToRef:
+    name: staging-gke-conn
+    namespace: crossplane-system
 
 
 ---
@@ -33,6 +36,3 @@ spec:
     config:
       machineType: n1-standard-4
     initialNodeCount: 2
-  writeConnectionSecretToRef:
-    name: staging-gke-conn
-    namespace: crossplane-system
