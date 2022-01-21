@@ -9,6 +9,15 @@ spec:
 
 ---
 apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: keptn-helm-service
+spec:
+  providerConfigRef:
+    name: staging-helm-provider
+
+---
+apiVersion: helm.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
   name: helm-provider

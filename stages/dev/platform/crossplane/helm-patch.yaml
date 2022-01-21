@@ -10,6 +10,16 @@ spec:
 
 ---
 apiVersion: helm.crossplane.io/v1beta1
+kind: Release
+metadata:
+  name: keptn-helm-service
+  namespace: crossplane-system
+spec:
+  providerConfigRef:
+    name: dev-helm-provider
+
+---
+apiVersion: helm.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
   name: helm-provider
