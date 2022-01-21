@@ -7,8 +7,9 @@ metadata:
 spec:
   forProvider:
     values:
-      distributor.stageFilter: dev
-      distributor.projectFilter: podtatohead
+      distributor:
+        stageFilter: dev
+        projectFilter: podtatohead
   providerConfigRef:
     name: dev-helm-provider
 
@@ -21,8 +22,9 @@ metadata:
 spec:
   forProvider:
     values:
-      distributor.stageFilter: dev
-      distributor.projectFilter: podtatohead
+      distributor:
+        stageFilter: dev
+        projectFilter: podtatohead
   providerConfigRef:
     name: dev-helm-provider
 
