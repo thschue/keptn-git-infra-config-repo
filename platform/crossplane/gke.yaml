@@ -25,19 +25,24 @@ spec:
       name: cluster-config
       namespace: crossplane-system
       key: kubeconfig
+  identity:
+    type: GoogleApplicationCredentials
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: gcp-creds
+      key: creds
 
 ---
 # API Reference: https://doc.crds.dev/github.com/crossplane/provider-gcp/container.gcp.crossplane.io/GKECluster/v1beta1@v0.16.0
 apiVersion: container.gcp.crossplane.io/v1beta2
 kind: Cluster
 metadata:
-  name: cluster
+  name: fosdem-cluster
   namespace: crossplane-system
 spec:
   forProvider:
-    initialClusterVersion: "1.19"
-    masterAuth:
-      username: admin
+    initialClusterVersion: "1.20"
     ipAllocationPolicy:
       useIpAliases: true
     defaultMaxPodsConstraint:
@@ -69,7 +74,7 @@ spec:
 apiVersion: container.gcp.crossplane.io/v1beta1
 kind: NodePool
 metadata:
-  name: nodepool
+  name: fosdem-nodepool
   namespace: crossplane-system
 spec:
   forProvider:
@@ -79,7 +84,7 @@ spec:
       maxNodeCount: 2
       minNodeCount: 1
     clusterRef:
-      name: gke-crossplane-cluster
+      name: fosdem-cluster
     config:
       diskSizeGb: 100
       imageType: cos_containerd
