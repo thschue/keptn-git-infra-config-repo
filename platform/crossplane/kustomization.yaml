@@ -1,6 +1,10 @@
 namePrefix: "dev-"
 resources:
   - gke.yaml
+  - helm.yaml
+  - kubernetes.yaml
+  - provider.yaml
+
 patchesStrategicMerge:
   - provider-patch.yaml
   - cluster-patch.yaml
