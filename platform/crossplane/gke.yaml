@@ -17,6 +17,7 @@ apiVersion: helm.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
   name: helm-provider
+  namespace: crossplane-system
 spec:
   credentials:
     source: Secret
@@ -104,6 +105,7 @@ apiVersion: helm.crossplane.io/v1beta1
 kind: Release
 metadata:
   name: keptn-job-executor
+  namespace: crossplane-system
 spec:
   # rollbackLimit: 3
   forProvider:
