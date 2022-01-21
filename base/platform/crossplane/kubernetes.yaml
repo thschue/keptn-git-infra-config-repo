@@ -82,7 +82,7 @@ spec:
       rules:
         - apiGroups: [ "" ]
           resources: [ "configmaps" ]
-          verbs: [ "create", "update", "get" ]
+          verbs: [ "create", "update", "get", "patch" ]
   providerConfigRef:
     name: kubernetes-provider
 
