@@ -5,6 +5,7 @@ actions:
       - name: "sh.keptn.event.platform-setup.triggered"
     tasks:
       - name: "crossplane"
+        maxPollDuration: 1200
         files:
           - crossplane
           - scripts
