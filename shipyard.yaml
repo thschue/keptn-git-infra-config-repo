@@ -10,6 +10,7 @@ spec:
           tasks:
             - name: "promotion"
             - name: "platform-setup"
+            - name: "infra-version"
     - name: "staging"
       sequences:
         - name: "artifact-delivery"
@@ -18,6 +19,7 @@ spec:
           tasks:
             - name: "promotion"
             - name: "platform-setup"
+            - name: "infra-version"
 
     - name: "production"
       sequences:
@@ -31,3 +33,4 @@ spec:
                 warning: manual
             - name: "promotion"
             - name: "infrastructure-delivery"
+            - name: "infra-version"
