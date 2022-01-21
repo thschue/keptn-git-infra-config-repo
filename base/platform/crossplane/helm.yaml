@@ -18,9 +18,6 @@ spec:
           name: keptn-ep-connection-values
           namespace: crossplane-system
           optional: false
-    values:
-      jobConfig:
-        enableKubernetesApiAccess: true
   providerConfigRef:
     name: helm-provider
 
