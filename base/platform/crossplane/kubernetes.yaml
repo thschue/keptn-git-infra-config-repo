@@ -100,6 +100,7 @@ spec:
       kind: RoleBinding
       metadata:
         name: job-executor-local
+        namespace: keptn
       subjects:
         - kind: ServiceAccount
           name: keptn-job-executor-job-executor-service
