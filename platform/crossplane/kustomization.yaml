@@ -1,6 +1,7 @@
 namePrefix: "dev-"
 resources:
-  - provider.yaml
+  - gke.yaml
 patchesStrategicMerge:
   - provider-patch.yaml
   - cluster-patch.yaml
+  - helm-patch.yaml
