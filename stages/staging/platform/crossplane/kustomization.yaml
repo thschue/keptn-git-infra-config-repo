@@ -6,7 +6,7 @@ resources:
   - providers.yaml
 
 commonLabels:
-  keptn.sh/stage: "dev"
+  keptn.sh/stage: "staging"
 
 patchesStrategicMerge:
   - provider-patch.yaml
