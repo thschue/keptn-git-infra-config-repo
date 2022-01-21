@@ -5,6 +5,9 @@ resources:
   - kubernetes.yaml
   - providers.yaml
 
+commonLabels:
+  keptn.sh/stage: "dev"
+
 patchesStrategicMerge:
   - provider-patch.yaml
   - cluster-patch.yaml

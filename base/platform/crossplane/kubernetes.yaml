@@ -4,6 +4,8 @@ kind: Object
 metadata:
   name: job-executor-serviceaccount
   namespace: crossplane-system
+  labels:
+    keptn.sh/stage: pre-dev
 spec:
   forProvider:
     manifest:
@@ -12,6 +14,7 @@ spec:
       metadata:
         creationTimestamp: null
         name: job-executor-service
+        namespace: keptn
   providerConfigRef:
     name: kubernetes-provider
 
@@ -21,6 +24,8 @@ kind: Object
 metadata:
   name: job-executor-clusterrole
   namespace: crossplane-system
+  labels:
+    keptn.sh/stage: pre-dev
 spec:
   forProvider:
     manifest:
