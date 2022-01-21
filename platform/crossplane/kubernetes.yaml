@@ -103,7 +103,7 @@ spec:
         namespace: keptn
       subjects:
         - kind: ServiceAccount
-          name: keptn-job-executor-job-executor-service
+          name: job-executor-service
           namespace: keptn
       roleRef:
         kind: Role
