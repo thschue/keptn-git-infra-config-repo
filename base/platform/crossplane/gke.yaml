@@ -34,6 +34,27 @@ spec:
       key: creds
 
 ---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: kubernetes-provider
+spec:
+  credentials:
+    source: Secret
+    secretRef:
+      name: cluster-config
+      namespace: crossplane-system
+      key: kubeconfig
+  identity:
+    type: GoogleApplicationCredentials
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: gcp-creds
+      key: creds
+
+
+---
 apiVersion: helm.crossplane.io/v1beta1
 kind: ProviderConfig
 metadata:
@@ -191,3 +212,48 @@ spec:
     wait: true
   providerConfigRef:
     name: helm-provider
+
+
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
+  name: job-executor-clusterrole
+  namespace: crossplane-system
+spec:
+  forProvider:
+    manifest:
+      apiVersion: rbac.authorization.k8s.io/v1
+      kind: ClusterRole
+      metadata:
+        # "namespace" omitted since ClusterRoles are not namespaced
+        name: job-executor
+      rules:
+        - apiGroups: [ "" ]
+          resources: [ "rollouts" ]
+          verbs: [ "get", "watch", "list", "update" ]
+  providerConfigRef:
+    name: kubernetes-provider
+
+---
+apiVersion: kubernetes.crossplane.io/v1alpha1
+kind: Object
+metadata:
+  name: job-executor-rolebinding
+  namespace: crossplane-system
+spec:
+  forProvider:
+    manifest:
+      kind: ClusterRoleBinding
+      metadata:
+        name: job-executor-global
+      subjects:
+      - kind: ServiceAccount
+        name: keptn-job-executor-job-executor-service
+        namespace: keptn
+      roleRef:
+        kind: ClusterRole
+        name: job-executor-clusterrole
+        apiGroup: rbac.authorization.k8s.io
+  providerConfigRef:
+    name: kubernetes-provider
