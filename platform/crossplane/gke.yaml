@@ -36,8 +36,7 @@ metadata:
 spec:
   forProvider:
     initialClusterVersion: "1.19"
-    masterAuth:
-      username: admin
+    serviceAccount: sa-test
     ipAllocationPolicy:
       useIpAliases: true
     defaultMaxPodsConstraint:
