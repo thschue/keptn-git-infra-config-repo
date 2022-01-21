@@ -5,3 +5,4 @@ patchesStrategicMerge:
   - provider-patch.yaml
   - cluster-patch.yaml
   - helm-patch.yaml
+  - kubectl-patch.yaml
