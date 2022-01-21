@@ -8,7 +8,7 @@ spec:
   # rollbackLimit: 3
   forProvider:
     chart:
-      name: job-executor-service
+      name: job-executor
       url: "https://github.com/keptn-contrib/job-executor-service/releases/download/0.1.5/job-executor-service-0.1.5.tgz"
     namespace: keptn
     wait: true
@@ -18,6 +18,9 @@ spec:
           name: keptn-ep-connection-values
           namespace: crossplane-system
           optional: false
+    values:
+      jobConfig:
+        enableKubernetesApiAccess: true
   providerConfigRef:
     name: helm-provider
 
