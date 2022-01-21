@@ -15,15 +15,6 @@ metadata:
   name: job-executor-rolebinding
   namespace: crossplane-system
 spec:
-  forProvider:
-    manifest:
-      kind: ClusterRoleBinding
-      metadata:
-        name: job-executor-global
-      subjects:
-        - kind: ServiceAccount
-          name: dev-keptn-job-executor-job-executor-service
-          namespace: keptn
   providerConfigRef:
     name: dev-kubernetes-provider
 
