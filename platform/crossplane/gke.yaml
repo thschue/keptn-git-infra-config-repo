@@ -31,11 +31,11 @@ spec:
 apiVersion: container.gcp.crossplane.io/v1beta2
 kind: Cluster
 metadata:
-  name: cluster
+  name: fosdem-cluster
   namespace: crossplane-system
 spec:
   forProvider:
-    initialClusterVersion: "1.19"
+    initialClusterVersion: "1.20"
     serviceAccount: sa-test
     ipAllocationPolicy:
       useIpAliases: true
@@ -78,7 +78,7 @@ spec:
       maxNodeCount: 2
       minNodeCount: 1
     clusterRef:
-      name: gke-crossplane-cluster
+      name: fosdem-cluster
     config:
       diskSizeGb: 100
       imageType: cos_containerd
