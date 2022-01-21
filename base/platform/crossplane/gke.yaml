@@ -60,7 +60,7 @@ spec:
         disabled: true
       networkPolicyConfig:
         disabled: false
-    location: us-central1-a
+    location: us-east1-a
     binaryAuthorization:
       enabled: false
     legacyAbac:
@@ -100,7 +100,7 @@ spec:
         - "https://www.googleapis.com/auth/trace.append"
     initialNodeCount: 2
     locations:
-      - us-central1-a
+      - us-east1-a
     management:
       autoRepair: true
       autoUpgrade: true
