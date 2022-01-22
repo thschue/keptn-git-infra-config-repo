@@ -36,7 +36,7 @@ spec:
         name: job-executor-clusterrole
       rules:
         - apiGroups: [ "argoproj.io" ]
-          resources: [ "rollouts" ]
+          resources: [ "rollouts", "rollouts/status" ]
           verbs: [ "get", "watch", "list", "update", "patch" ]
   providerConfigRef:
     name: kubernetes-provider
