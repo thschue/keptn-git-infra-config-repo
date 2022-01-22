@@ -37,7 +37,7 @@ spec:
       rules:
         - apiGroups: [ "argoproj.io" ]
           resources: [ "rollouts" ]
-          verbs: [ "get", "watch", "list", "update" ]
+          verbs: [ "get", "watch", "list", "update", "patch" ]
   providerConfigRef:
     name: kubernetes-provider
 
